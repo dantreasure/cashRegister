@@ -1,0 +1,10 @@
+/*Add a border in order to see where our elements are*/
+/*
+body *{
+	border: 1px solid black;
+}*/
+
+section{
+	display:  inline-block;
+	width: 40%;
+}
