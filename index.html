@@ -12,9 +12,9 @@
 	<style type="text/css"></style>
 </head>
 <body ng-app="app">
-	<div class="container" ng-controller="myCtrl">
+	<div class="container row" ng-controller="myCtrl">
 		<h1>this is a cash register</h1>
-		<section class="col-xs-6 col-md-4">
+		<section class="col-xs-6 col-md-6">
 			<table class="table">
 				<tr>
 					<th >
@@ -47,9 +47,24 @@
 			</table>
 		</section>
 		<div class="container">
-		<section class="col-xs-6 col-md-4">
+		<section class="col-xs-6 col-md-6">
 
-			<h1>This is where the form will go</h1>
+  <form ng-submit="submit(newItem)">
+    <div>
+      <input type="title" ng-model="title" name="text" /> 
+    </div>
+    <div>
+      <input type="cost" ng-model="cost" name="text" />
+    </div>
+    <div>
+      <input type="notes" ng-model="notes" name="text" />
+    </div>
+    <div>
+    <input type="submit" id="submit" value="Submit Content" />  
+    <h1>fix sum function</h1>
+
+    </div>
+  </form>
 		</section>
 </div>
 	</div>

@@ -52,6 +52,17 @@ app.controller('myCtrl', ['$scope', function($scope){
 		}
 		return $scope.total;
 	};
+
+	 $scope.submit = function() {
+          var newItem = {};
+          newItem.title = $scope.title;
+          newItem.cost = $scope.cost;
+          newItem.notes = $scope.notes;
+
+          $scope.transactions.push(newItem);
+
+          //go through and set the $scope.title/content/tags to ''
+        };
 }]);
 
 
