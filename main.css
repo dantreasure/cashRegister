@@ -1,10 +1,18 @@
 /*Add a border in order to see where our elements are*/
-/*
-body *{
+
+/*body *{
 	border: 1px solid black;
 }*/
 
 section{
 	display:  inline-block;
 	width: 40%;
+}
+
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
 }

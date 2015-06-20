@@ -49,18 +49,19 @@
 		<div class="container">
 			<section class="col-xs-6 col-md-6">
 
-				<form ng-submit="submit(newItem)">
+				<form name="inputForm" ng-submit="inputForm.$valid && submit(newItem)">
 					<p id="help">Helpful notes will appear here</p>
 					<div>
-					<p>Item name:    <input type="title" ng-model="title" name="text" id="title"/></p>
+					<p>Item name:    <input type="text" ng-model="title" name="title" id="title" required/></p>
 					</div>
 					<div>
-						<p>Cost: <input type="cost" ng-model="cost" name="text" id="cost"/></p>
+						<p>Cost: <input type="number" ng-model="cost" name="cost" id="cost" required/></p>
 					</div>
 					<div>
-						<p>Notes: <input type="notes" ng-model="notes" name="text" id="notes"/></p>
+						<p>Notes: <input type="text" ng-model="notes" name="notes" id="notes"/></p>
 					</div>
 					<div>
+					<div> inputForm is {{inputForm.$valid}}</div>
 						<input type="submit" id="submit" value="Submit Content" />
 						<h1>fix sum function</h1>
 

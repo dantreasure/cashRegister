@@ -58,6 +58,7 @@ app.controller('myCtrl', ['$scope', function($scope){
           newItem.title = $scope.title;
           newItem.cost = $scope.cost;
           newItem.notes = $scope.notes;
+          newItem.createdOn = Date.now();
 
           $scope.transactions.push(newItem);
 
