@@ -67,31 +67,12 @@ app.controller('myCtrl', ['$scope', function($scope){
 }]);
 
 
-function showHelp(help) {
-  document.getElementById('help').innerHTML = help;
-}
-
-function makeHelpCallback(help) {
-  return function() {
-    showHelp(help);
-  };
-}
-
-function setupHelp() {
-  var helpText = [
-      {'id': 'title', 'help': 'What was your item?'},
-      {'id': 'cost', 'help': 'How much did it cost?'},
-      {'id': 'notes', 'help': 'Do you have any special requests?'}
-    ];
-
-  for (var i = 0; i < helpText.length; i++) {
-    var item = helpText[i];
-    document.getElementById(item.id).onfocus =
-       makeHelpCallback(item.help);
-  }
-}
-
-setupHelp();
+app.directive("currentTransaction", function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'current-transaction.html'
+	};
+});
 
 // https://moqups.com/dan@devpointlabs.com/7LEERNAU
 
