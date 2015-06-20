@@ -18,7 +18,7 @@
 			<table class="table">
 				<tr>
 					<th >
-					<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('title')">
+						<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('title')">
 							transaction
 						</button>
 					</th>
@@ -47,26 +47,27 @@
 			</table>
 		</section>
 		<div class="container">
-		<section class="col-xs-6 col-md-6">
+			<section class="col-xs-6 col-md-6">
 
-  <form ng-submit="submit(newItem)">
-    <div>
-      <input type="title" ng-model="title" name="text" /> 
-    </div>
-    <div>
-      <input type="cost" ng-model="cost" name="text" />
-    </div>
-    <div>
-      <input type="notes" ng-model="notes" name="text" />
-    </div>
-    <div>
-    <input type="submit" id="submit" value="Submit Content" />  
-    <h1>fix sum function</h1>
+				<form ng-submit="submit(newItem)">
+					<p id="help">Helpful notes will appear here</p>
+					<div>
+					<p>Item name:    <input type="title" ng-model="title" name="text" id="title"/></p>
+					</div>
+					<div>
+						<p>Cost: <input type="cost" ng-model="cost" name="text" id="cost"/></p>
+					</div>
+					<div>
+						<p>Notes: <input type="notes" ng-model="notes" name="text" id="notes"/></p>
+					</div>
+					<div>
+						<input type="submit" id="submit" value="Submit Content" />
+						<h1>fix sum function</h1>
 
-    </div>
-  </form>
-		</section>
-</div>
+					</div>
+				</form>
+			</section>
+		</div>
 	</div>
 
 </body>
