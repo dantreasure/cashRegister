@@ -16,3 +16,14 @@ section{
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+
+.stripUl {
+list-style: none;
+text-decoration: none;
+width: 100%;
+}
+
+.stripUl a:hover {
+text-decoration: none;
+color: #000;
+}

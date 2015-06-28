@@ -1,6 +1,25 @@
-var app = angular.module('app', []);
+var financialStuff = angular.module('financialStuff', ['ngRoute']);
 
-app.controller('myCtrl', ['$scope', function($scope){
+financialStuff.config(function($routeProvider) {
+    $routeProvider
+        .when('/cashRegister', {
+            templateUrl: 'cashRegister.html',
+            controller: 'myCtrl'
+        })
+        .when('/calculator', {
+            templateUrl: 'calculator.html',
+            controller: 'CalcCtrl'
+        })
+                .when('/other', {
+            templateUrl: 'other.html',
+            controller: 'CalcCtrl'
+        })
+        .otherwise({
+            redirectTo: '/cashRegister'
+        });
+});
+
+financialStuff.controller('myCtrl', ['$scope', function($scope){
 
 	$scope.filterBy = '';
 
@@ -67,17 +86,68 @@ app.controller('myCtrl', ['$scope', function($scope){
 }]);
 
 
-app.directive("currentTransaction", function() {
+financialStuff.directive("currentTransaction", function() {
 	return {
 		restrict: 'E',
 		templateUrl: 'current-transaction.html'
 	};
 });
 
-// https://moqups.com/dan@devpointlabs.com/7LEERNAU
+	financialStuff.controller('CalcCtrl', ['$scope',
+		function($scope) {
 
-// be able to add to receipts and be able to  see past receipts
+			$scope.evaluation = "0";
 
-//filter by clicking the heading
+			$scope.pressKeyZero = function(key) {
+				if($scope.evaluation == "0") {
+					$scope.evaluation = "";
+				}
+				$scope.evaluation += key;
+			};
 
-//click again and it reverses the order
+			$scope.pressKeySym = function(key) {
+				$scope.evaluation += key;
+			};
+
+			$scope.solve = function() {
+
+				try {
+					$scope.errorHandling = $scope.evaluation;
+					$scope.evaluation = eval($scope.evaluation);
+					if($scope.errorHandling === $scope.evaluation) {
+						throw SyntaxError;
+					}
+				} catch (e) {
+					if (e instanceof SyntaxError) {
+						console.log(e);
+						$scope.evaluation = "Syntax Error";
+						setTimeout(function(){
+							$scope.evaluation = "0";
+						}, 500);
+					} else {
+						console.log("otherError")
+						// sometimes 0 divided by x
+						// percent of infinity
+						// single number = itself
+						// % of a negative number
+						$scope.evaluation = "error";
+						setTimeout(function(){
+							$scope.evaluation = "0";
+						}, 500);
+					}
+				}
+			};
+
+			$scope.clear = function() {
+				$scope.evaluation = "0";
+			}
+
+			$scope.percent = function() {
+				$scope.solve();
+				if($scope.evaluation === "undefined") {
+
+				} else {
+					$scope.evaluation /= 100;
+				}
+			}
+		}]);

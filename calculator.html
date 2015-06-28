@@ -1,0 +1,42 @@
+<div class="container well" ng-controller="CalcCtrl">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Calculator: {{ evaluation }}</h3>
+			</div>
+		</div>
+		<div class="row">
+			<button id="paren" class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('(')">(</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero(')')">)</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="percent()">%</button>
+			<button id="goingClear" class="col-sm-3 col-xs-3 btn btn-danger"  ng-click="clear()">AC</button>
+
+		</div>
+		<div class="row">
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('7')">7</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('8')">8</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('9')">9</button>
+			<button class="col-sm-3 col-xs-3 btn btn-info"    ng-click="pressKeySym('+')">+</button>
+		</div>
+		<div class="row">
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('4')">4</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('5')">5</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('6')">6</button>
+			<button class="col-sm-3 col-xs-3 btn btn-info"    ng-click="pressKeySym('-')">-</button>
+		</div>
+		<div class="row">
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('1')">1</button>
+			<button id="two" class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('2')">2</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('3')">3</button>
+			<button id="times" class="col-sm-3 col-xs-3 btn btn-info"    ng-click="pressKeySym('*')">x</button>
+		</div>
+		<div class="row">
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeySym('.')">.</button>
+			<button class="col-sm-3 col-xs-3 btn btn-default" ng-click="pressKeyZero('0')">0</button>
+			<button id="equals" class="col-sm-3 col-xs-3 btn btn-success" ng-click="solve()">=</button>
+			<button class="col-sm-3 col-xs-3 btn btn-info"    ng-click="pressKeySym('/')">/</button>
+		</div>
+
+
+	</div>
+
+</div>

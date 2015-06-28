@@ -1,32 +1,31 @@
 <section class="col-xs-6 col-md-6">
-			<table class="table">
-				<tr>
-					<th >
-						<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('title')">
-							transaction
-						</button>
-					</th>
-					<th>
-						<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('cost')">
-							cost
-						</button>
-					</th>
-					<th>
-						<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('notes')">
-							notes
-						</button>
-					</th>
-				</tr>
-				<tr ng-repeat="transaction in transactions | orderBy: filterBy">
-					<td>{{ transaction.title }}</td>
-					<td>{{ transaction.cost | currency}}</td>
-					<td>{{ transaction.notes }}</td>
-				</tr>
-				<tr>
-					<th>TOTAL</th>
-					<th>{{ sum() | currency}}</th>
-					<th></th>
-				</tr>
-
-			</table>
-		</section>
+	<table class="table">
+		<tr>
+			<th >
+				<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('title')">
+					transaction
+				</button>
+			</th>
+			<th>
+				<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('cost')">
+					cost
+				</button>
+			</th>
+			<th>
+				<button type="button" class="btn btn-default" aria-label="Left Align" ng-click="setFilter('notes')">
+					notes
+				</button>
+			</th>
+		</tr>
+		<tr ng-repeat="transaction in transactions | orderBy: filterBy">
+			<td>{{ transaction.title }}</td>
+			<td>{{ transaction.cost | currency}}</td>
+			<td>{{ transaction.notes }}</td>
+		</tr>
+		<tr>
+			<th>TOTAL</th>
+			<th>{{ sum() | currency}}</th>
+			<th></th>
+		</tr>
+	</table>
+</section>

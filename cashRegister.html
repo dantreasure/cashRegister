@@ -1,0 +1,28 @@
+		<current-transaction>
+	</current-transaction>
+	<div class="container well">
+	<div class="row">
+		<section class="col-xs-6 col-md-6 text-right">
+<br/>
+<br/>
+			<form name="inputForm" ng-submit="inputForm.$valid && submit(newItem)">
+				<p id="help">Helpful notes will appear here</p>
+				<div>
+					<p>Item name:    <input type="text" ng-model="title" name="title" id="title" required/></p>
+				</div>
+				<div>
+					<p>Cost: <input type="number" ng-model="cost" name="cost" id="cost" required/></p>
+				</div>
+				<div>
+					<p>Notes: <input type="text" ng-model="notes" name="notes" id="notes"/></p>
+				</div>
+				<div>
+					<!-- <div> inputForm is {{inputForm.$valid}}</div> -->
+					<input type="submit" id="submit" value="Submit Content" />
+					<!-- <h1>fix sum function</h1> -->
+					<!-- be able to add to receipts and be able to  see past receipts -->
+				</div>
+			</form>
+		</section>
+	</div>
+</div>
