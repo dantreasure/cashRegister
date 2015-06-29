@@ -15,7 +15,7 @@ financialStuff.config(function($routeProvider) {
             controller: 'CalcCtrl'
         })
         .otherwise({
-            redirectTo: '/cashRegister'
+            redirectTo: '/calculator'
         });
 });
 
@@ -72,6 +72,8 @@ financialStuff.controller('myCtrl', ['$scope', function($scope){
 		return $scope.total;
 	};
 
+//be able to add decimals.
+
 	 $scope.submit = function() {
           var newItem = {};
           newItem.title = $scope.title;
@@ -81,8 +83,14 @@ financialStuff.controller('myCtrl', ['$scope', function($scope){
 
           $scope.transactions.push(newItem);
 
-          //go through and set the $scope.title/content/tags to ''
+
+          $scope.title	= '';
+          $scope.cost	= '';
+          $scope.notes	= '';
         };
+
+
+
 }]);
 
 
