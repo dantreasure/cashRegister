@@ -15,7 +15,7 @@ financialStuff.config(function($routeProvider) {
             controller: 'CalcCtrl'
         })
         .otherwise({
-            redirectTo: '/calculator'
+            redirectTo: '/cashRegister'
         });
 });
 
@@ -65,14 +65,13 @@ financialStuff.controller('myCtrl', ['$scope', function($scope){
 	];
 
 	$scope.sum = function() {
-		$scope.total = 0;
+		$scope.total = "";
 		for (var i = 0; i < $scope.transactions.length; i++) {
-			$scope.total += $scope.transactions[i].cost;
+			$scope.total += "+" + $scope.transactions[i].cost;
 		}
+		$scope.total = eval($scope.total);
 		return $scope.total;
 	};
-
-//be able to add decimals.
 
 	 $scope.submit = function() {
           var newItem = {};
@@ -134,7 +133,6 @@ financialStuff.directive("currentTransaction", function() {
 						}, 500);
 					} else {
 						console.log("otherError")
-						// sometimes 0 divided by x
 						// percent of infinity
 						// single number = itself
 						// % of a negative number
